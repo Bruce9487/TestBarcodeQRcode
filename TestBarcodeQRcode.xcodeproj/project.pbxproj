@@ -14,6 +14,7 @@
 		3274DDAB23191A3D0099B36F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3274DDA923191A3D0099B36F /* LaunchScreen.storyboard */; };
 		3274DDB623191A3D0099B36F /* TestBarcodeQRcodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3274DDB523191A3D0099B36F /* TestBarcodeQRcodeTests.swift */; };
 		3274DDC123191A3D0099B36F /* TestBarcodeQRcodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3274DDC023191A3D0099B36F /* TestBarcodeQRcodeUITests.swift */; };
+		3274DDCF23191BD70099B36F /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3274DDCE23191BD70099B36F /* QRScannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3274DDBC23191A3D0099B36F /* TestBarcodeQRcodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestBarcodeQRcodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3274DDC023191A3D0099B36F /* TestBarcodeQRcodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBarcodeQRcodeUITests.swift; sourceTree = "<group>"; };
 		3274DDC223191A3D0099B36F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3274DDCE23191BD70099B36F /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				3274DDA723191A3D0099B36F /* Assets.xcassets */,
 				3274DDA923191A3D0099B36F /* LaunchScreen.storyboard */,
 				3274DDAC23191A3D0099B36F /* Info.plist */,
+				3274DDCE23191BD70099B36F /* QRScannerView.swift */,
 			);
 			path = TestBarcodeQRcode;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3274DDA323191A3D0099B36F /* ViewController.swift in Sources */,
+				3274DDCF23191BD70099B36F /* QRScannerView.swift in Sources */,
 				3274DDA123191A3D0099B36F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,7 +437,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XAQUJAQK24;
 				INFOPLIST_FILE = TestBarcodeQRcode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,7 +456,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XAQUJAQK24;
 				INFOPLIST_FILE = TestBarcodeQRcode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

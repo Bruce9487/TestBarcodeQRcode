@@ -8,13 +8,42 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, QRScannerViewDelegate {
+    
+    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var scannerView: QRScannerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        self.scannerView.delegate = self
     }
 
-
+    @IBAction func openCamera(_ sender: Any) {
+        self.scannerView.startScanning()
+    }
+    
+    @IBAction func stopScanner(_ sender: Any) {
+        textLabel.text = "請掃描"
+        self.scannerView.stopScanning()
+    }
+    func qrScanningDidFail() {
+        textLabel.text = "掃描失敗"
+        print("qrScanningDidFail")
+    }
+    
+    func qrScanningSucceededWithCode(_ str: String?) {
+        print("qrScanningSucceededWithCode : \(String(describing: str))")
+        DispatchQueue.main.async {
+            self.textLabel.text = "掃描成功： \(String(describing: str))" 
+        }
+    }
+    
+    func qrScanningDidStop() {
+        print("qrScanningDidStop")
+    }
+    
 }
+
+
 

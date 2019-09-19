@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,69 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestBarcodeQRcode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAc-Jq-xTN">
+                                <rect key="frame" x="147.5" y="577" width="80" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="GXJ-CP-W1I"/>
+                                    <constraint firstAttribute="height" constant="60" id="IWO-SR-oPv"/>
+                                </constraints>
+                                <state key="normal" title="開始掃描"/>
+                                <connections>
+                                    <action selector="openCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ufm-Ew-k91"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請掃描" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJH-ld-jCC">
+                                <rect key="frame" x="15" y="347" width="345" height="200"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="BAR-vq-80Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPf-UQ-PEY">
+                                <rect key="frame" x="252.5" y="592" width="76.5" height="30"/>
+                                <state key="normal" title="停止"/>
+                                <connections>
+                                    <action selector="stopScanner:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dip-DK-inJ"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdR-As-A0f" customClass="QRScannerView" customModule="TestBarcodeQRcode" customModuleProvider="target">
+                                <rect key="frame" x="15" y="35" width="345" height="297"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nAc-Jq-xTN" secondAttribute="bottom" constant="30" id="6Ay-a2-Etv"/>
+                            <constraint firstItem="QPf-UQ-PEY" firstAttribute="leading" secondItem="nAc-Jq-xTN" secondAttribute="trailing" constant="25" id="BeE-bd-2hG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QPf-UQ-PEY" secondAttribute="trailing" constant="46" id="Gtd-NQ-YjA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qdR-As-A0f" secondAttribute="trailing" constant="15" id="O6f-Rp-Rv6"/>
+                            <constraint firstItem="nAc-Jq-xTN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WTE-l7-yGg"/>
+                            <constraint firstItem="qdR-As-A0f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="bga-BI-e2f"/>
+                            <constraint firstItem="yJH-ld-jCC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="fuy-fp-Og5"/>
+                            <constraint firstItem="nAc-Jq-xTN" firstAttribute="top" secondItem="yJH-ld-jCC" secondAttribute="bottom" constant="30" id="l7i-oV-ocd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yJH-ld-jCC" secondAttribute="trailing" constant="15" id="u3q-lE-OVg"/>
+                            <constraint firstItem="qdR-As-A0f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="uhs-q4-ygM"/>
+                            <constraint firstItem="yJH-ld-jCC" firstAttribute="top" secondItem="qdR-As-A0f" secondAttribute="bottom" constant="15" id="y0f-9Y-Nii"/>
+                            <constraint firstItem="QPf-UQ-PEY" firstAttribute="centerY" secondItem="nAc-Jq-xTN" secondAttribute="centerY" id="yse-VQ-c2A"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="scannerView" destination="qdR-As-A0f" id="faj-dF-jsZ"/>
+                        <outlet property="textLabel" destination="yJH-ld-jCC" id="JU2-Ph-rC6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>
